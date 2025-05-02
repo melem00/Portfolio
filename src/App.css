@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 75px;
+}
+
+body {
+  background-color: #DAD7CD;
+  color: #333;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+@media (min-width:1700px) {
+	main .container {
+		max-width: 100%;
+		padding: 0 150px;
+	}
+}
+
+/* Navbar Styling */
+.navbar {
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: #ffffff; /* Solid background when scrolled */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow when scrolled */
+}
+
+.navbar a.navbar-brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.navbar a.navbar-brand:hover {
+  color: #6a11cb; /* Matches the gradient from the banner */
+}
+
+.navbar .navbar-nav .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  margin: 0 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .navbar-nav .nav-link:hover {
+  color: #6a11cb; /* Matches the gradient from the banner */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.navbar .navbar-nav .nav-link.active {
+  color: #6a11cb;
+  font-weight: 600;
+  border-bottom: 2px solid #6a11cb; /* Underline for active link */
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  width: 24px;
+  height: 2px;
+  background-color: #333;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -6px;
+}
+
+.navbar-toggler-icon::after {
+  top: 6px;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+/* Social Icons in Navbar */
+.navbar .social-icons {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.navbar .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(217, 217, 217, 0.2);
+  border-radius: 50%;
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.navbar .social-icons a:hover {
+  background: #6a11cb; /* Matches the gradient from the banner */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.navbar .social-icons a img {
+  width: 60%;
+  height: auto;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.navbar .social-icons a:hover img {
+  filter: grayscale(0%);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Banner Section */
+.banner {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #ffffff;
+  padding: 100px 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner .tagline {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffd700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.banner h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.banner p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.banner button {
+  background-color: #ffd700;
+  color: #121212;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.banner button:hover {
+  background-color: #ffcc00;
+  transform: scale(1.05);
+}
+
+/* Dynamic Text Animation */
+.wrap {
+  font-weight: 700;
+  color: #ffd700;
+  border-right: 2px solid #ffd700;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from {
+    border-color: #ffd700;
+  }
+  to {
+    border-color: transparent;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .banner h1 {
+    font-size: 36px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+
+  .banner button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
